@@ -198,6 +198,7 @@ export default function DashboardPage() {
         <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
           {credits && (
             <>
+              <a href='/help' style={{ fontSize: 11, color: '#9ca3af', textDecoration: 'none', fontWeight: 600 }}>? Panduan</a>
               <span style={{ background: tierColor + '18', color: tierColor, padding: '3px 10px', fontSize: 10, fontWeight: 700, letterSpacing: 1, textTransform: 'uppercase' }}>
                 {credits.tier}
               </span>

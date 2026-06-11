@@ -166,14 +166,14 @@ export default function SetupPage() {
           <div>
             <label style={labelStyle}>Tagline Bisnis <span style={{ color: '#d1d5db', fontWeight: 400 }}>(opsional — muncul di caption)</span></label>
             <input style={inputStyle} placeholder="contoh: Kopi Enak, Harga Bersahabat"
-              value={form.tagline} onChange={e => setForm(f => ({ ...f, tagline: e.target.value }))} />
+              value={form.tagline || ''} onChange={e => setForm(f => ({ ...f, tagline: e.target.value }))} />
           </div>
 
           <div>
             <label style={labelStyle}>Teks Headline Poster <span style={{ color: '#d1d5db', fontWeight: 400 }}>(muncul besar di image)</span></label>
             <input style={inputStyle}
               placeholder={form.niche ? (NICHE_POSTER_EXAMPLES[form.niche]?.[0] || 'WORLD CUP 2026') : 'Pilih niche dulu...'}
-              value={form.poster_tagline}
+              value={form.poster_tagline || ''}
               onChange={e => setForm(f => ({ ...f, poster_tagline: e.target.value.toUpperCase() }))} />
             {form.niche && NICHE_POSTER_EXAMPLES[form.niche] && (
               <div style={{ marginTop: 8 }}>
@@ -193,19 +193,19 @@ export default function SetupPage() {
           <div>
             <label style={labelStyle}>Kota <span style={{ color: '#d1d5db', fontWeight: 400 }}>(opsional)</span></label>
             <input style={inputStyle} placeholder="contoh: Jakarta Selatan"
-              value={form.kota} onChange={e => setForm(f => ({ ...f, kota: e.target.value }))} />
+              value={form.kota || ''} onChange={e => setForm(f => ({ ...f, kota: e.target.value }))} />
           </div>
 
           <div>
             <label style={labelStyle}>Nomor WhatsApp <span style={{ color: '#d1d5db', fontWeight: 400 }}>(opsional)</span></label>
             <input style={inputStyle} placeholder="contoh: 08123456789"
-              value={form.wa_number} onChange={e => setForm(f => ({ ...f, wa_number: e.target.value }))} />
+              value={form.wa_number || ''} onChange={e => setForm(f => ({ ...f, wa_number: e.target.value }))} />
           </div>
 
           <div>
             <label style={labelStyle}>Link Toko / Bio <span style={{ color: '#d1d5db', fontWeight: 400 }}>(opsional)</span></label>
             <input style={inputStyle} placeholder="contoh: linktr.ee/namatoko"
-              value={form.link_toko} onChange={e => setForm(f => ({ ...f, link_toko: e.target.value }))} />
+              value={form.link_toko || ''} onChange={e => setForm(f => ({ ...f, link_toko: e.target.value }))} />
           </div>
 
           <div>
