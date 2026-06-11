@@ -64,6 +64,11 @@ export default function DashboardPage() {
   const [showChangeBisnisModal, setShowChangeBisnisModal] = useState(false)
   const [promptVisible, setPromptVisible] = useState(false)
 
+  async function handleLogout() {
+    await supabase.auth.signOut()
+    router.push('/login')
+  }
+
   const matchDates = getMatchDates()
   const todayStr = format(new Date(), 'yyyy-MM-dd')
   const nearestDate = matchDates.find(d => d >= todayStr) || matchDates[0]
@@ -199,6 +204,7 @@ export default function DashboardPage() {
           {credits && (
             <>
               <a href='/help' style={{ fontSize: 11, color: '#9ca3af', textDecoration: 'none', fontWeight: 600 }}>? Panduan</a>
+              <button onClick={handleLogout} style={{ fontSize: 11, color: '#9ca3af', background: 'none', border: 'none', cursor: 'pointer', fontWeight: 600, padding: 0 }}>Logout</button>
               <span style={{ background: tierColor + '18', color: tierColor, padding: '3px 10px', fontSize: 10, fontWeight: 700, letterSpacing: 1, textTransform: 'uppercase' }}>
                 {credits.tier}
               </span>
